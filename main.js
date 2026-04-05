@@ -36,6 +36,13 @@
             ].innerText = letter;
         }
 
+        letters.forEach((letterEl) => {
+            letterEl.addEventListener("touchstart", (e) => {
+                e.preventDefault(); // stop page scroll
+                letterEl.focus(); // brings up the keyboard
+            });
+        });``
+
         // user tries to enter a guess
         async function commit() {
             if (currentGuess.length !== ANSWER_LENGTH) {
@@ -113,7 +120,6 @@
                 alert(`you lose, the word was ${word}`);
                 done = true;
             }
-
         }
 
         // user hits backspace, if the the length of the string is 0 then do
