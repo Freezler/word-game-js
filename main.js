@@ -22,6 +22,13 @@
         isLoading = false;
         setLoading(isLoading);
 
+        letters.forEach((letterEl) => {
+            letterEl.addEventListener("touchstart", (e) => {
+                e.preventDefault(); // stop page scroll
+                letterEl.focus(); // brings up the keyboard
+            });
+        });
+
         // user adds a letter to the current guess
         function addLetter(letter) {
             if (currentGuess.length < ANSWER_LENGTH) {
@@ -35,13 +42,6 @@
                 currentRow * ANSWER_LENGTH + currentGuess.length - 1
             ].innerText = letter;
         }
-
-        letters.forEach((letterEl) => {
-            letterEl.addEventListener("touchstart", (e) => {
-                e.preventDefault(); // stop page scroll
-                letterEl.focus(); // brings up the keyboard
-            });
-        });``
 
         // user tries to enter a guess
         async function commit() {
