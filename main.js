@@ -23,7 +23,7 @@
         setLoading(isLoading);
 
 
-            scoreboard.addEventListener("touchstart", (e) => {
+            scoreBoard.addEventListener("touchstart", (e) => {
                 e.preventDefault(); // stop page scroll
                 letterEl.focus(); // brings up the keyboard
             });
