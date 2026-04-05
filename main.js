@@ -4,7 +4,7 @@
     const letters = document.querySelectorAll(".scoreboard-letter");
     const loadingDiv = document.querySelector(".info-bar");
     const answerLetters = document.querySelectorAll(".answer-letter");
-    const answerBoard = document.querySelector(".answer-board");
+    const scoreBoard = document.querySelector(".scoreboard");
 
     // I like to do an async init function so I can use "await"
     async function init() {
@@ -23,7 +23,7 @@
         setLoading(isLoading);
 
 
-            document.body.addEventListener("touchstart", (e) => {
+            scoreboard.addEventListener("touchstart", (e) => {
                 e.preventDefault(); // stop page scroll
                 letterEl.focus(); // brings up the keyboard
             });
